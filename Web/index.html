@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀 페이지</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module">
+        import { openAddModal, addMember, openModal, closeModal, saveMemberData, deleteMember, closeAddModal } from './script.js';
+        window.openAddModal = openAddModal;
+        window.addMember = addMember;
+        window.openModal = openModal;
+        window.closeModal = closeModal;
+        window.saveMemberData = saveMemberData;
+        window.deleteMember = deleteMember;
+        window.closeAddModal = closeAddModal;
+    </script>
+</head>
+
+<body>
+    <div class="boox">
+        <div class="conta">
+            <div>
+                <h1>404</h1>
+                <div class="conta_font">
+                <p>Not Found</p>
+                <p>The page you are looking for might have been removed, had its name changed, or is temporarily
+                    unavailable.
+                </p>
+                <p><a href="/">Go to Homepage</a></p>
+            </div>
+            </div>
+        </div>
+    <header>
+        <div class="logo">Sparta(16조)</div>
+        <label class="switch">
+            <input type="checkbox" id="dark-mode-toggle">
+            <span class="slider round"></span>
+        </label>
+    </header>
+    <main>
+        <section class="team-name">
+            <h1>404 Not Found</h1>
+            <div class="team-logo">
+                <img src="../team_logo_image.png" class="team-logo-image">
+            </div>
+            <h2>Our Team Members</h2>
+        </section>
+        <section class="team-details">
+            <div class="team-goal">
+                    <h3>우리 팀만의 특징과 추구하는 궁극적인 목표</h3>
+                    <p>특징 : 서로 도우면서 성장, 포기하지 않는 자세
+                    <br>추구하는 궁극적인 목표 : 낙오자 없이 모두 배워 졸업하기
+                    </p>
+            </div>
+            <div class="team-promise">
+                <h3>우리 팀의 약속</h3>
+                <div class="team-rule">
+                    <p><ol>
+                        <li>자리 비울 일이 있을 때 팀원들에게 꼭 알리고 비우기.</li>
+                        <li>소통 잘하고 상처 받는 말 하지 말기.</li>
+                        <li>피드백을 요청하면 긍정/부정에 관계 없이 확실하게 적극적으로 답변하기.</li>
+                        <li>누구 한명이라도 모르는 것이 있으면 짚고 넘어가기.</li>
+                        <li>모르는 내용이 있다면 제일 먼저 검색 후 그래도 모른다면 튜터님 혹은 팀원에게 물어보기.</li>
+                        <li>정보 공유를 잘하기.</li>
+                    </ol>
+                    </p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="add-button" onclick="openAddModal()">추가</button>
+            </div>
+        </section>
+        <section class="team-members" id="team-members">
+        </section>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <div class="modal-inner-content">
+                <div class="modal-photo" id="modal-photo"></div>
+                <div class="modal-info">
+                    <h3 id="modal-name"></h3>
+                    <div class="modal-description">
+                        <label>설명</label>
+                        <textarea id="modal-description"></textarea>
+                    </div>
+                    <div class="modal-strength">
+                        <label>나의 장점</label>
+                        <textarea id="modal-strength"></textarea>
+                    </div>
+                    <div class="modal-style">
+                        <label>협업 스타일</label>
+                        <textarea id="modal-style"></textarea>
+                    </div>
+                    <div class="modal-buttons">
+                        <button id="postingBtn" class="save-button" onclick="saveMemberData()">등록</button>
+                        <button class="cancel-button" onclick="closeModal()">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeAddModal()">&times;</span>
+            <div class="modal-inner-content">
+                <div class="modal-photo">
+                    <label for="photo-input">프로필 사진</label>
+                    <input type="file" id="photo-input" accept="image/*">
+                </div>
+                <div class="modal-info">
+                    <div class="modal-description">
+                        <label for="name-input">이름</label>
+                        <input type="text" id="name-input">
+                    </div>
+                    <div class="modal-description">
+                        <label for="description-input">자기소개</label>
+                        <textarea id="description-input"></textarea>
+                    </div>
+                    <div class="modal-description">
+                        <label for="mbti-input">MBTI</label>
+                        <input type="text" id="mbti-input">
+                    </div>
+                    <div class="modal-buttons">
+                        <button class="save-button" onclick="addMember()">등록</button>
+                        <button class="cancel-button" onclick="closeAddModal()">취소</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
