@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 let connect = () => {
   mongoose
     .connect(
-      "mongodb+srv://@expressmongo.egahk.mongodb.net/?retryWrites=true&w=majority&appName=ExpressMongo",
+      "mongodb+srv://wlsdbstp1234:jinyunse1999^^@expressmongo.egahk.mongodb.net/?retryWrites=true&w=majority&appName=ExpressMongo",
       {
         dbName: "ExpressMongo",
       },
