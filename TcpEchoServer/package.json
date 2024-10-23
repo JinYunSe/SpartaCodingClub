@@ -1,0 +1,14 @@
+{
+  "name": "TcpEchoServer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "client": "node client.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
